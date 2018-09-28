@@ -3,8 +3,9 @@ global $BEAUT_PATH;
 if (!isset ($BEAUT_PATH)) return;
 require_once("$BEAUT_PATH/Beautifier/HFile.php");
   class HFile_winbatch extends HFile{
-   function HFile_winbatch(){
-     $this->HFile();	
+   function __construct(){
+     // $this->HFile();
+     parent::__construct();
 /*************************************/
 // Beautifier Highlighting Configuration File 
 // WinBatch

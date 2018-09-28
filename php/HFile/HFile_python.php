@@ -4,8 +4,9 @@ global $BEAUT_PATH;
 if (!isset ($BEAUT_PATH)) return;
 require_once("$BEAUT_PATH/Beautifier/HFile.php");
   class HFile_python extends HFile{
-   function HFile_python(){
-     $this->HFile();
+   function __construct(){
+     // $this->HFile();
+     parent::__construct();
      
 /*************************************/
 // Beautifier Highlighting Configuration File 
