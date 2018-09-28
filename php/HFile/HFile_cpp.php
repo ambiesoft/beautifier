@@ -7,7 +7,8 @@ class HFile_cpp extends HFile{
 
  function __construct(){
 
-    $this->HFile();	
+    // $this->HFile();
+ 	parent::__construct();
 
 
 /*************************************/

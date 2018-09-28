@@ -30,7 +30,7 @@ $this->unindent          	= array();
 // String characters and delimiters
 
 $this->stringchars       	= array("\"", "'");
-$this->delimiters        	= array("~", "@", "$", "%", "^", "&", "*", "(", ")", "+", "=", "|", "\\", "{", "}", "[", "]", ":", ";", "\"", "'", "<", ">", " ", ",", "	"<, ".", "?");
+$this->delimiters        	= array("~", "@", "$", "%", "^", "&", "*", "(", ")", "+", "=", "|", "\\", "{", "}", "[", "]", ":", ";", "\"", "'", "<", ">", " ", ",", "	", ".", "?");
 $this->escchar           	= "";
 
 // Comment settings

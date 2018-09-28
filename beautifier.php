@@ -35,8 +35,14 @@ function do_beautify($m)
   $code = str_replace(array('<:vspace>', '&lt;', '&gt;', '&amp;'), 
                       array('', '<', '>', '&'), $KPV[$keepindex]);
   if ($BeautifierOutputType != 'css') $BeautifierOutputType = 'HTML';
-  eval("\$beautifier = new HFile_$language();");
-  eval("\$h1 = new Core(\$beautifier, new Output_$BeautifierOutputType());");
+//   eval("\$beautifier = new HFile_$language();");
+//   eval("\$h1 = new Core(\$beautifier, new Output_$BeautifierOutputType());");
+
+  $classHFile = "HFile_$language";
+  $beautifier = new $classHFile();
+  
+  $classOutput = "Output_$BeautifierOutputType";
+  $h1 = new Core($beautifier, new $classOutput());
   $results = "<pre class='sourcecode'>" 
       . $h1->highlight_text($code) . '</pre>';
   return Keep($results);

@@ -558,14 +558,20 @@ function _munge($munge)
 						$category = $this->highlightfile->keywords[$checkword];
 						$fontchunk = $this->context->category_parts[$category][0].$currword.$this->context->category_parts[$category][1];
 				
-						if (
-						  isset($this->highlightfile->linkscripts) && 
-							(
-							  $code = call_user_method($this->highlightfile->linkscripts{$category}, $this->highlightfile, $oldword, $this->output_module)
-							) != $oldword
-							)
+						if (isset($this->highlightfile->linkscripts))
 						{
-							$fontchunk = $code;
+							$method_name = $this->highlightfile->linkscripts{$category};
+							$obj = $this->highlightfile;
+							$code = $obj->$method_name($oldword, $this->output_module);
+// 							$code = call_user_method(
+// 									$method_name,
+// 									$obj, 
+// 									$oldword,
+// 									$this->output_module);
+							if($code != $oldword)
+							{
+								$fontchunk = $code;
+							}
 						}
 						$strout .= $fontchunk;
 					}
